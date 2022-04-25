@@ -1,0 +1,22 @@
+<div class="container">
+  <ul class="nav nav-pills nav-fill justify-content-center">
+ <!--  <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/']"
+        routerLinkActive="active"  aria-current="page" [routerLinkActiveOptions]="{exact : true}">Inicio</a>
+    </li>
+-->
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/series']"
+      routerLinkActive="active" >Séries</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/filmes']"
+      routerLinkActive="active" >Filmes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled">Disabled</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>
+

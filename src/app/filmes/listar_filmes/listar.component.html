@@ -1,0 +1,13 @@
+<table class="table" >
+  <tr bgColor="  #7fffd4  " >
+    <th>ID</th>
+    <th>Nome do Filme</th>
+    <th>Nome do Diretor</th>
+
+  </tr>
+  <tr *ngFor="let f of filmes" bgColor="#dffff4">
+    <th>{{ f.id }}</th>
+    <th>{{ f.nome }}</th>
+    <th>{{ f.diretor }}</th>
+  </tr>
+</table>

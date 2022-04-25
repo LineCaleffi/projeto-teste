@@ -1,0 +1,13 @@
+<table class="table">
+  <tr bgColor="  #7fffd4  " >
+    <th>ID</th>
+    <th>Nome da série</th>
+    <th>Elenco Principal</th>
+  </tr>
+  <tr *ngFor="let p of series" bgColor="#dffff4">
+    <th>{{ p.id}}</th>
+    <th>{{p.nome}}</th>
+    <th>{{p.principal}}</th>
+  </tr>
+
+</table>
