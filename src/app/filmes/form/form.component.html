@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="meuForm" (submit)="onSubmit()">
   <br><br>
   <div class="row d-flex justify-content-center"><!-- centraliza -->
       <div class="col-8">
@@ -6,6 +6,9 @@
               <label>Nome do Filme</label>
               <input type="text" class="form-control" formControlName="nome" placeholder="Digite o nome do filme">
           </div>
+          <app-mostrar-mensagem
+            [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
+          </app-mostrar-mensagem>
       </div>
   </div>
 
@@ -15,6 +18,9 @@
             <label>Nome do diretor</label>
             <input type="text" class="form-control" formControlName="diretor" placeholder="Digite o nome do diretor">
         </div>
+        <app-mostrar-mensagem
+        [controles]="meuForm.controls['diretor']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
     </div>
   </div>
   <br>

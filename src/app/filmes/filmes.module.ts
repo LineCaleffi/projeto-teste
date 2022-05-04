@@ -4,6 +4,7 @@ import { ListarComponente } from './listar_filmes/listar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './form/form.component';
 import { FilmesRoutingModule } from './filmes-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FilmesRoutingModule } from './filmes-routing.module';
   imports: [
     CommonModule,
     HttpClientModule,
-    FilmesRoutingModule
+    FilmesRoutingModule,
+    SharedModule
   ],
   exports:[
     ListarComponente
