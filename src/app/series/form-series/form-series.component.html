@@ -1,0 +1,31 @@
+<form [formGroup]="meuForm" (submit)="onSubmit()">
+  <br><br>
+  <div class="row d-flex justify-content-center"><!-- centraliza -->
+      <div class="col-8">
+          <div class="form-group">
+              <label>Nome da Série</label>
+              <input type="text" class="form-control" formControlName="nome" placeholder="Digite o nome da série">
+          </div>
+          <app-mostrar-mensagem
+            [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
+          </app-mostrar-mensagem>
+      </div>
+  </div>
+
+  <div class="row d-flex justify-content-center"><!-- centraliza -->
+    <div class="col-8">
+        <div class="form-group">
+            <label>Autor principal</label>
+            <input type="text" class="form-control" formControlName="principal" placeholder="Digite o autor principal">
+        </div>
+        <app-mostrar-mensagem
+          [controles]="meuForm.controls['principal']" [mensagem]="'Erro ao preencher campo'">
+        </app-mostrar-mensagem>
+    </div>
+  </div>
+  <br>
+  <div align=center>
+    <button type="submit" class="btn btn-primary">Enviar</button> <!-- 'primary' deixa o botão azul-->
+    <button type="reset" class="btn btn-primary">Limpar</button> <!-- 'primary' deixa o botão azul-->
+  </div>
+</form>
