@@ -1,13 +1,22 @@
+<br>
+<div class="row float-end">
+  <button class="btn btn-success" routerLink="/series/criar">Criar +</button>
+</div><br><br>
 <table class="table">
   <tr bgColor="  #7fffd4  " >
     <th>ID</th>
     <th>Nome da série</th>
     <th>Elenco Principal</th>
+    <th>Ações</th>
   </tr>
   <tr *ngFor="let p of series" bgColor="#dffff4">
     <th>{{ p.id}}</th>
     <th>{{p.nome}}</th>
     <th>{{p.principal}}</th>
+    <td>
+      <button class="btn btn-outline-info" [routerLink]="['/series/editar',p.id]"> Editar</button>
+      <button class="btn btn-outline-danger" (click)="onDelete(p.id)">Deletar</button>
+    </td>
   </tr>
 
 </table>
