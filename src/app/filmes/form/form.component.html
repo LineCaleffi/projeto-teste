@@ -1,32 +1,39 @@
-<form [formGroup]="meuForm" (submit)="onSubmit()">
-  <br><br>
-  <div class="row d-flex justify-content-center"><!-- centraliza -->
-      <div class="col-8">
+<br>
+<div class="container">
+
+  <div class="jumbotron"> <!-- Indica uma caixa grande para chamar a atenção extra para algum conteúdo -->
+      <h1 class="display-6">Filmes</h1>
+      <p class="lead-1">Inclusão de um novo filme</p>
+      <hr class="my-2"> <!-- Adiciona uma linha abaixo para divisão -->
+  </div>
+  <form [formGroup]="meuForm" (submit)="onSubmit()">
+    <br><br>
+    <div class="row d-flex justify-content-center"><!-- centraliza -->
+            <div class="form-group">
+                <label>Nome do Filme</label>
+                <input type="text" class="form-control" formControlName="nome" placeholder="Digite o nome do filme">
+            </div>
+            <app-mostrar-mensagem
+              [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
+            </app-mostrar-mensagem>
+    </div>
+
+    <div class="row d-flex justify-content-center"><!-- centraliza -->
           <div class="form-group">
-              <label>Nome do Filme</label>
-              <input type="text" class="form-control" formControlName="nome" placeholder="Digite o nome do filme">
+              <label>Nome do diretor</label>
+              <input type="text" class="form-control" formControlName="diretor" placeholder="Digite o nome do diretor">
           </div>
           <app-mostrar-mensagem
-            [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
-          </app-mostrar-mensagem>
+          [controles]="meuForm.controls['diretor']" [mensagem]="'Erro ao preencher campo'">
+        </app-mostrar-mensagem>
       </div>
-  </div>
 
-  <div class="row d-flex justify-content-center"><!-- centraliza -->
-    <div class="col-8">
-        <div class="form-group">
-            <label>Nome do diretor</label>
-            <input type="text" class="form-control" formControlName="diretor" placeholder="Digite o nome do diretor">
-        </div>
-        <app-mostrar-mensagem
-        [controles]="meuForm.controls['diretor']" [mensagem]="'Erro ao preencher campo'">
-      </app-mostrar-mensagem>
+    <br>
+    <div  class="gap-2 d-md-flex">
+      <button type="submit" class="btn btn-primary">Enviar</button> <!-- 'primary' deixa o botão azul-->
+      <button type="reset" class="btn btn-primary">Limpar</button> <!-- 'primary' deixa o botão azul-->
+      <a routerLink="/filmes" class="btn btn-outline-secondary">Cancelar</a>
     </div>
-  </div>
-  <br>
-  <div align=center>
-    <button type="submit" class="btn btn-primary">Enviar</button> <!-- 'primary' deixa o botão azul-->
-    <button type="reset" class="btn btn-primary">Limpar</button> <!-- 'primary' deixa o botão azul-->
-  </div>
+  </form>
 
-</form>>
+</div>

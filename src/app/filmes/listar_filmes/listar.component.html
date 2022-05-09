@@ -1,22 +1,31 @@
 <br>
-<div class="row float-end">
-  <button class="btn btn-success" routerLink="/filmes/criar">Criar +</button>
-</div><br><br>
-<table class="table" >
-  <tr bgColor="  #7fffd4  " >
-    <th>ID</th>
-    <th>Nome do Filme</th>
-    <th>Nome do Diretor</th>
-    <th>Ações</th>
+<div class="container">
+  <div class="jumbotron"> <!-- Indica uma caixa grande para chamar a atenção extra para algum conteúdo -->
+      <h1 class="display-6">Filmes - Lista de Filmes </h1>
 
+      <hr class="my-2"> <!-- Adiciona uma linha abaixo para divisão -->
+  </div>
+
+  <br>
+  <div class="row float-end">
+    <button class="btn btn-success" routerLink="/filmes/criar">Criar +</button>
+  </div><br><br>
+  <table class="table" >
+    <tr bgColor="  #7fffd4  " >
+      <th>ID</th>
+      <th>Nome do Filme</th>
+      <th>Nome do Diretor</th>
+      <th>Ações</th>
+
+    </tr>
+    <tr *ngFor="let f of filmes" bgColor="#dffff4">
+      <th>{{ f.id }}</th>
+      <th>{{ f.nome }}</th>
+      <th>{{ f.diretor }}</th>
+      <td>
+        <button class="btn btn-outline-info" [routerLink]="['/filmes/editar',f.id]"> Editar</button>
+        <button class="btn btn-outline-danger" (click)="onDelete(f.id)">Deletar</button>
+      </td>
   </tr>
-  <tr *ngFor="let f of filmes" bgColor="#dffff4">
-    <th>{{ f.id }}</th>
-    <th>{{ f.nome }}</th>
-    <th>{{ f.diretor }}</th>
-    <td>
-      <button class="btn btn-outline-info" [routerLink]="['/filmes/editar',f.id]"> Editar</button>
-      <button class="btn btn-outline-danger" (click)="onDelete(f.id)">Deletar</button>
-    </td>
-</tr>
-</table>
+  </table>
+</div>
